@@ -1,0 +1,39 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+class Main{
+    public static void main(String[] args) throws NumberFormatException, IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)) ;
+        
+        int n = Integer.parseInt(br.readLine());
+        int x=0;
+        int y=0;
+        
+        for(int k=0;k<n;k++) {	
+	        String line = br.readLine();
+	        String str="";
+	        for(int i=0;i<line.length();i++) {
+	        	if (line.charAt(i)==' ') {
+	        		 x = Integer.parseInt(str);
+	        		 str="";
+	        		 continue;
+	        	}
+	        	str+=line.charAt(i);
+	        }
+	        y=Integer.parseInt(str);
+	        int sum=x+y;
+	        
+	        if(k!=n-1)
+	        	bw.write(sum+"\n");
+	        else
+	        	bw.write(sum+"");
+
+        }
+        bw.flush();
+        bw.close();
+    }
+}

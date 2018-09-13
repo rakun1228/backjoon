@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int i = sc.nextInt();
+		int n = sc.nextInt();
+		sc.nextLine();
+		String str = sc.nextLine();
+		String[] ar = str.split(" ");
+				
+		for(int j=0;j<ar.length;j++) {
+			if(Integer.parseInt(ar[j])<n) System.out.print(ar[j]+" ");
+		}
+	}
+}

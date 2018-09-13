@@ -1,0 +1,42 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int c = sc.nextInt();
+		sc.nextLine();
+		
+		for(int i=0;i<c;i++) {
+			int x = sc.nextInt();
+			int sum = 0;
+			double aver = 0;
+			int cnt = 0;
+			double pct = 0;
+			
+			int[] scr = new int[x];
+			
+			for(int j=0;j<x;j++) {
+				scr[j] = sc.nextInt();
+				sum+=scr[j];
+			}
+			sc.nextLine();
+			aver = (double)sum/x;
+			for(int k=0;k<x;k++) {
+				if(scr[k]>aver) cnt++;
+			}
+			pct = (double)cnt/x;
+			
+			DecimalFormat form = new DecimalFormat();
+			form.applyLocalizedPattern("0.000");
+			
+			System.out.printf("%.3f%%\n",Math.round(pct*100000)/1000.0);
+			
+//			DecimalFormat form = new DecimalFormat();
+//			form.applyLocalizedPattern("0.000");
+//			System.out.println(form.format(Math.round(pct*100000)/1000.0)+"%");
+		}
+	}
+}

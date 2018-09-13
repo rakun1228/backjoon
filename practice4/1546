@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		sc.nextLine();
+		int max = 0;
+		double sum = 0;
+		
+		String str = sc.nextLine();
+		String[] ary = str.split(" ");
+		int[] scr1 = new int[n];
+		double[] scr2 = new double[n];
+		
+		for(int i=0;i<n;i++) {
+			scr1[i]=Integer.parseInt(ary[i]);
+		}
+		for(int j=0;j<n;j++) {
+			if(scr1[j]>max) max = scr1[j];
+		}
+		for(int k=0;k<n;k++) {
+			scr2[k] = (double)scr1[k]/max*100;
+			sum+=scr2[k];
+		}
+		System.out.println(sum/n);
+	}
+
+}
